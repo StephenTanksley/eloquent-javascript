@@ -1,0 +1,1 @@
+// Ch. 1 deals primarily with establishing a baseline vocabulary for JavaScript and introducing essentials (primitives, variables, etc.) There are no exercises in Ch. 1.
