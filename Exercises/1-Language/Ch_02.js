@@ -18,8 +18,10 @@ console.log(abc.length);
 
 // Your code here. */
 
+// 1) create an accumulator string.
 let tree = ''
 
+// 2) create a loop.
 for (let i = 0; i < 8; i+1)
   if (tree.length <= 7) {
       tree += "#"
@@ -70,3 +72,33 @@ Passing this string to console.log should show something like this:
 When you have a program that generates this pattern, define a binding size = 8 and change the program so that it works for any size, outputting a grid of the given width and height.
 
 // Your code here.*/
+
+// 1) size is the parameter which tells us how many rows and columns our chessboard will have.
+let size = 8
+
+// 2) result is an accumulator string which will accept input up until the size specified in the size variable.
+let result = "";
+
+// 3) This program needs to handle both rows and columns. Ergo, we're going to need two loops, one nested inside the other.
+
+//first loop - 
+for (let i=0; i < size; i++){
+
+    //second loop - 
+    for (let j = 0; j < size; j++) {
+
+        //4) result is currently a null value. There's nothing there. When the loop runs the first time, the value of (i + j) % 2 is computed. If that's true, we give it a blank space. If false, we fill in the space. This loops until i and j have incremented up to our size variable. 
+        
+        //This happens until we've reached j === size. Once we hit that, our first loop increments. Now with i === 1, it will not begin with a blank space because (i + j) % 2 !== 0. 
+
+
+        result += (i + j) % 2 ? "◻" : "◼"
+    }
+
+    // 5) At the conclusion of the j loop, we add a line break before moving back up to the top of the call stack to begin again.
+    result += '\n';
+}
+
+
+// 6) When we console.log(result), we are asking for the value of the result variable which occurs via the execution of the loop.
+console.log(result)
