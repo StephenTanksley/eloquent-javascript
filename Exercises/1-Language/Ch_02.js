@@ -86,7 +86,7 @@ for (let i=0; i < size; i++){
 
     //second loop - 
     for (let j = 0; j < size; j++) {
-
+        console.log(j)
         //4) result is currently a null value. There's nothing there. When the loop runs the first time, the value of (i + j) % 2 is computed. If that's true, we give it a blank space. If false, we fill in the space. This loops until i and j have incremented up to our size variable. 
         
         //This happens until we've reached j === size. Once we hit that, our first loop increments. Now with i === 1, it will not begin with a blank space because (i + j) % 2 !== 0. 
