@@ -63,15 +63,38 @@ console.log(isEven(-6))
 // Your function will likely look somewhat similar to the inner find function in the recursive findSolution example in this chapter, with an if/else if/else chain that tests which of the three cases applies. The final else, corresponding to the third case, makes the recursive call. Each of the branches should contain a return statement or in some other way arrange for a specific value to be returned.
 
 // When given a negative number, the function will recurse again and again, passing itself an ever more negative number, thus getting further and further away from returning a result. It will eventually run out of stack space and abort.
+
+
 // Bean counting
 
 // You can get the Nth character, or letter, from a string by writing "string"[N]. The returned value will be a string containing only one character (for example, "b"). The first character has position 0, which causes the last one to be found at position string.length - 1. In other words, a two-character string has length 2, and its characters have positions 0 and 1.
 
 // Write a function countBs that takes a string as its only argument and returns a number that indicates how many uppercase “B” characters there are in the string.
 
+const countBs = (str) => {
+
+    //we're comparing the length of the string with the target letter and without it.
+    let count1 = str.length;
+    let count2 = str.replace(/B/g, "").length;
+
+    return count1 - count2;
+}
+
 // Next, write a function called countChar that behaves like countBs, except it takes a second argument that indicates the character that is to be counted (rather than counting only uppercase “B” characters). Rewrite countBs to make use of this new function.
 
-// // Your code here.
+const countChar = (str, char) => {
+
+    let count1 = str.length;
+
+    // I did not know how to do this before. You can create a RegEx to search for a something specific in a string. I tried at first to use template literals inside a RegExp like this: const count2 = str.search(/`${char}/g`).length. Didn't work. This does.
+
+    const regexp = new RegExp(char, 'g')
+    let count2 = str.replace(regexp, "").length
+ 
+    let finalCount = count1 - count2
+    
+    return finalCount
+ }
 
 // console.log(countBs("BBC"));
 // // → 2
