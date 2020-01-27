@@ -41,7 +41,7 @@ const isEven = (n) => {
     } else if (n === 1) {
         return false;
 
-    //we know that this function won't work if our value is negative, so we have to convert it to a positive value.
+    //we know that this function won't work if our value is negative, so we have to convert it to a positive value. Math.abs will return the absolute value of a number which is perfect for this use-case.
     } else if (n < 0) {
         return isEven(Math.abs(n))
 

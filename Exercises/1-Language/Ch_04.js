@@ -12,8 +12,18 @@
 
 // // Your code here.
 
+//using Array.from()
+const range = (start, end, length = end - start + 1) => {
+    Array.from({ length }, (_, i) => start + i)
+}
 
-
+//using a recursive generator
+function* range(start, end) {
+    
+    yield start;
+    if ( start === end ) return;
+    yield* range(start + 1, end);
+}
 // console.log(range(1, 10));
 // // → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // console.log(range(5, 2, -1));
